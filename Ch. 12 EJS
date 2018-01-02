@@ -1,0 +1,25 @@
+-A network protocol describes a style of communication over a network. Protocols are built on top of other protocols.
+-Most communication on the Internet is built on top of one protocol: the Transmission Control Protocol (TCP).
+    TCP: one computer listening, with a port associated, and another computer that establishes a connection using the port number
+    After connecting, the listening computer is the server, and the connecting computer is the client
+    
+-The Web: a set of protocols and formats that allows us to visit web pages in a browser
+    To add to the web, a machine connected to the internet needs to listen on port 80 using the Hypertext Transfer Protocol (HTTP).
+    Each web document has a Uniform Resource Locator (URL), that indicates the protocol, the server, and finally the resourse
+    
+-A computers IP address could be used as the server in a URL, but it is easier to register a domain name to point 
+towards a machine or set of machines
+
+-Hypertext Markup Language (HTML) is the document format used for web pages
+    Contains text, as well as tags that give structure to the text (links, paragraphs, and headings)
+    Tags are starting with an opening tag like <p> (for a paragraph) and closed with </p>
+    
+-Including angle brackets in the text of a document, use &lt; ("less than") and &gt; ("greater than")
+    Something enclosed between an ampersand and a semi-colon is called an entity, and will be replaced by the character it represents4
+
+-<script> is an HTML tag that allows us to include a piece of JavaScript in a document
+    Either the actual code can be inserted between the <script> and </script>, but it is often more applicable to
+    give the tag a src (source) attribut in order to retrieve a text file from a URL 
+    
+-Sandboxing: the idea that a program is severely limited by a a browser in what it can do. It is as if it is \
+    harmlessly playing in a sandbox
