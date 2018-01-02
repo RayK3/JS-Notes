@@ -1,0 +1,18 @@
+Opening a web page: the browser retrieves the page's HTML text and parses it. Parsing is basically 
+    taking in an HTML document and pulling out the relevent information from it.
+    The browser builds a model of the documents structure after parsing, and uses the model to draw the page on teh screen
+    
+Document Structure: an HTML document is basically a nested set of tags, which are usually represented by boxes
+    For each box, there is an object, which we can interact with to find out things such as what HTML tag
+    it represents as well as which boxes and text it contains. 
+    This is called the Document Object Model, or DOM
+    
+In HTML, comments are written between <!-- and -->
+
+HTML documents can be looked at as a tree, with many nodes pointing to their parent and children
+    All element nodes have a getElementsByTagName method, which collects all elements with the given tag name that are descendants of the 
+    given node and returns them as an array-like object.
+    
+You can also give element nodes an id attribute, and use document.getElementById to find that node.
+
+
