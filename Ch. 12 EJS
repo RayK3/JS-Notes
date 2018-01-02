@@ -19,7 +19,7 @@ towards a machine or set of machines
 
 -<script> is an HTML tag that allows us to include a piece of JavaScript in a document
     Either the actual code can be inserted between the <script> and </script>, but it is often more applicable to
-    give the tag a src (source) attribut in order to retrieve a text file from a URL 
+    give the tag a src (source) attribute in order to retrieve a text file from a URL 
     
--Sandboxing: the idea that a program is severely limited by a a browser in what it can do. It is as if it is \
+-Sandboxing: the idea that a program is severely limited by a a browser in what it can do. It is as if it is
     harmlessly playing in a sandbox
