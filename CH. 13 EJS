@@ -15,5 +15,19 @@ HTML documents can be looked at as a tree, with many nodes pointing to their par
     
 You can also give element nodes an id attribute, and use document.getElementById to find that node.
 
+Nodes can only exist in one place in a document at one time, so if you move a child to a different
+    location, it will be first removed from its original location, and finally inserted into its new
+    position.
+    
+Attributes: Extra information that can be included in tags, needs a name and a value
+    ex: <p isEnglish = "English"> Hello </p>
+ 
+Layout: 
+    Paragraphs (<p>) or headings (<h>) take up the whole width of the document and are rendered
+    on separate lines. These are called block elements.
+    
+    Links (<a>) or <strong> element are rendered on the same line with their surrounding text. These
+    are called inline elements. 
+    
 
 
