@@ -1,3 +1,4 @@
+
 18.1 Working with buttons
     HTML includes a button element, where the text that goes on the button is written between the tags
     ex: <button>Button 1</button>
@@ -18,5 +19,14 @@
             <option selected>Tomorrowland</option>
             <option>The Wizard of Oz</option>
         </select>
-    As done above, a selected attribute can be added to have that option selected when the page is opened
+    As done above, a selected attribute can be added to have that option selected when the page is opened.
+   
+18.3 Reading user input with text boxes
+    You use an input HTML element with a type attribute set to "text".
+    ex: <input type="text" id="txtComment" />
+    *The input element is a self closing tag, so observe the syntax
+    
+    The input element with a type attribute set to "text" is displayed as a text box on the page. Other common type attributes
+    for input elements include password, submit, checkbox, and radio. 
+    
     
