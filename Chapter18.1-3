@@ -1,0 +1,22 @@
+18.1 Working with buttons
+    HTML includes a button element, where the text that goes on the button is written between the tags
+    ex: <button>Button 1</button>
+    
+    *Just like before, in order to work with the button in the JS, it needs an id attribute
+    
+    In order to tell the button to do something, you need a reference to the button in JS:
+    ex: var btn = document.getElementById("btnGreeting");
+    
+    And you also need to add an event listener:
+    ex: btn.addEventListener("click", updateGreeting);
+    
+18.2 Adding a select element to the page
+    Web browsers render the select element as a drop-down list. You use option elements to specify the choices in the list
+    ex:
+        <select id="movies">
+            <option>Inside Out</option>
+            <option selected>Tomorrowland</option>
+            <option>The Wizard of Oz</option>
+        </select>
+    As done above, a selected attribute can be added to have that option selected when the page is opened
+    
