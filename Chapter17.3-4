@@ -1,0 +1,23 @@
+17.3 Adding content to a web page with JavaScript
+    Two new functions in JS: Math.floor(*num*) which rounds a number down to the nearest integer value lower than itself
+    Math.random() which generates a number from 0, inclusive, to 1, exclusive
+    
+    ***To update the content of an html tag in the JS, you can assign the element to a variable using any method, and then assign the 
+    element any actual content using *variableName*.innerHTML = "whatever";
+    
+    To be able to reference an element in HTML, you need to access it via one of its classes, where a very common one to use is the id 
+    class.
+    To actually get the reference to the element, you use the document.getElementById method, passing the id of the element as an argument.
+    
+    Function declarations are used when naming the functions for later use. Expression is normally used if the function only needs to be
+    used once.
+    
+17.4 Displaying data from an array
+    A div element is used as a container to collect groups of related elements together.
+    
+    If you are wanting to display array elements onto a webpage, it is a good idea to do this using an unordered list.
+    Then
+    
+    It is very useful to write html code as a string in the JS and insert is using .hiddenHTML into some variable that corresponds to an
+    id of a tag
+    
