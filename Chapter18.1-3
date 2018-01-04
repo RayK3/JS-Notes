@@ -1,4 +1,5 @@
 
+
 18.1 Working with buttons
     HTML includes a button element, where the text that goes on the button is written between the tags
     ex: <button>Button 1</button>
@@ -28,5 +29,7 @@
     
     The input element with a type attribute set to "text" is displayed as a text box on the page. Other common type attributes
     for input elements include password, submit, checkbox, and radio. 
+    
+    The text in a text box is accessed by setting it to a variable using getElementById, before using variable.value to use the text.
     
     
