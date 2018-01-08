@@ -1,0 +1,79 @@
+HTTP (Hypertext Transfer Protocol)
+    -the mechanism through which data is requested and provided on the World Wide Web.
+    
+The Protocol:
+    -if you type eloquentjavascript.net/17_http.html into the browser's address bar, the browser first 
+    looks for the address of the server associated with eloquentjavascript.net and tries to open a 
+    TCP connection to it on port 80 (default port for HTTP traffic). If the server exists and accepts the
+    connection, your browser sends a request for the resource, and the server provides the resource as an html
+    document with the appropriate information included. It looks like this:
+    
+    GET /`7_http.html HTTP/1.1
+    Host: eloquentjavascript.net
+    User-Agent: Your browser's name
+    
+    Then the server responds through the same connection:
+    
+    HTTP/1.1 200 OK
+    Content-Length: 65585
+    Content-Type: text/html
+    Last-Modified: Wed, 09 Apr 2014 10:48:09 GMT
+    
+    <!doctype html>
+    ... the rest of the document
+    
+    -The browser takes the part of the response after the blank line and displays it as an HTML document
+    -The first line that the browser sends to the server (GET ...) is called the request. Where other common
+    requests are DELETE, PUT to replace it, POST to send info to it.
+    -The part after the method name is the path of the resource that is wanted.
+    
+    -The server's response starts with a version, then a status as a status code and then a readable string
+        -status codes starting with 2 mean that the request succeeded. Codes starting with 4 means that something
+        wrong happened. 404 is the most widely known
+    -The server's response continues with a variety of headers about the document 
+    
+    -URL encoding escapes characters with a % sign
+    
+XMLHttpRequest
+   -the interface through which browser JavaScript can make HTTP requests
+   -is not actually tied to XML at all, but was named with it due to the popularity of XML at the time of its
+   inception
+   -The interface allows you to parse response documents as XML if you want
+   -This allowed people to do things with JS that were very difficult before, such as have suggestions pop up
+   as a person was typing into a text field
+   
+   -to make a request, we must create request object
+   ex:
+        var req = new XMLHttpRequest();
+        req.open("Get", "example/data.txt", false);
+        req.send(null);
+        console.log(req.responseText);
+        
+Asynchronous Requests
+    -In the above example, the initial request is finished when the call to send returns. This means that the 
+    program is suspended as long as the browser and server are communicating. This could take a while. 
+    This causes the whole program to become unresponsive.
+    
+    -Passing true as the third argument in open causes the call to send to only schedule the request to be sent.
+    The program can continue, and the browser will take care of the sending and receiving in the background.
+    -While the request is running, we won't be able to access the response. Use a load event listener to signify 
+    when the request is done. This can be done between the open and send calls
+    
+    XML documents can be used to exchange structured information with the server. It is often better to communicate
+    using JSON data.
+    
+HTTP Sandboxing
+    -To add security, browsers disallow scripts to make HTTP requests to other domains.
+    -This can be avoided by including a header in the server that allows access to other domains
+        -Access-Control-Allow-Origin: *
+        
+It is common to group all of the ugly XMLHttpRequest code into a function to reuse
+
+Promises
+    -Allow asynchronous action to be wrapped in an object, which can be passed around and told to do certain
+    things when the action finishes or fails. This is probably already part of the javascript library?
+    
+    
+    
+    
+    
