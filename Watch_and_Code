@@ -1,0 +1,29 @@
+Version 1:
+    -Arrays have various methods associated. One of them is the .push method where it will add what's
+    in the parentheses to the end of the array. This function adds to the array and returns the length
+    of the array.
+Version 2:
+    -Think about the sandwich recipe when talking about functions. 
+    ex:
+    function makeSandwichWith(filling) {
+      Get one slice of bread;
+      Add filling;
+      Put a slice of bread on top;
+    }
+    The parameter is a generalized term that encompasses all of the uses of the function
+Version 3:
+    -What you would call datamembers of objects in c++, are called properties in JS.
+    -You do not need to define the variables in an object. Just use the key-value pair notation.
+    -You still access them the same way as you would in c++ using the dot notation.
+    -To include functions as properties (methods), you still use the key-value pair, but the value is an
+    anonymous function.
+    -When you want to reference the object that you are in, JS has a keyword *this* that allows you 
+    to reference the object.
+Version 4:
+    -Parts of a for-loop: 
+        -Initialization
+        -Condition
+        -final-expression
+    -It is good form to use array.length as part of the condition in order to make the for loop dynamic
+Version 5:
+    -Included if, else statements.
