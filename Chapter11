@@ -1,1 +1,10 @@
-
+Scope: Hiding Information
+    People should be able to access your interface, the functionality you make public, and not be concerned with your 
+    implementation, how you program that functionality
+    
+    Local variables can only be accessed from the scope that they originated in
+    You can modify a variable within a function to change its scope
+    
+    Constructor functions: Constructors are functions that streamline the common process of creating objects with similar
+    properties and methods. You call a constructor by using the new keyword.
+    If you want to make private data members objects, then you can put them in a function
