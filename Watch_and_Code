@@ -27,3 +27,7 @@ Version 4:
     -It is good form to use array.length as part of the condition in order to make the for loop dynamic
 Version 5:
     -Included if, else statements.
+Verson 6: 
+    -When an object is created, the variable actually saves the memory location of the object, which makes
+    object comparisons pretty much always false unless you save one as the other.
+    
