@@ -1,0 +1,19 @@
+Data Objects:
+    Any time you use dot notation, you can also use square brackets. The expression between the brackets is ealutated first and then
+    used to try and find a property of that name.
+    
+    *-Array method: join(" "); This joins all of the elements of an array into a string with the argument passed between them.
+    -Although uncommon, you can use the delete operator to remove a property from an object.
+    -in: this operator returns a boolean value that indicates whether an object has that property.
+    
+    -Adding and removing things at the start of an array are called unshift and shift. (Shift takes off and returns the value, 
+    and unshift adds it)
+    
+    -indexOf and lastIndexOf both search the array for a value and return the index. The former searches from the beginning and 
+    looks forward, where the latter searches from the end and looks backward. They both have an optional second argument that 
+    indicates where to start searching from.
+    
+    -slice, takes two arguments and cuts an array into a slice between the two indeces. The first index inclusive and the second
+    index exclusive. If you only pass one argument, then it will take the remainder of the array after that argument.
+    
+    -The place in which global variables live is called the global object, and is stored in the window variable.
