@@ -1,0 +1,33 @@
+Functions:
+    -Variables defined within functions are local variables, and are newly created every time the function is called.
+    -Variables declared outside any function are called global
+    
+    *-If a function doesn't redeclare a global variable inside of it, then it can reference and change that global variable that
+    is referenced
+    -Each local scope can see all the scopes that contain it
+    
+    *-let: creates a variable that is local to the enclosing block, not the enclosing function
+    
+    Function declaration: 
+        ex: 
+            function square(x) {
+              return x * x;
+            }
+    This is called declaration and will allow the function to be called before it is defined
+    
+    -Every time you nest a function within another, while running, the program has to keep track of where each function was called.
+    This is done using a 'call stack' and this can cause the program to fail if it gets too big.
+    
+    -Functions in javascript will not fail if you pass them the wrong amount of arguments for its parameters. Actually,
+    if you pass them too many, they will just ignore the extras, and if you pass them too few, the remaining parameters 
+    will be assigned undefined. This makes it very easy to pass the wrong amount of arguments to a function and never 
+    know about it.
+    
+    -You can declare a variable and set it equal to a function with a specific argument. This will be a function that will always 
+    use that argument. This is called a closure.
+    
+    -"Almost any program can be made faster by making it bigger and more convoluted. The programmer must decide on an appropriate
+    balance."
+    
+    -How difficult it is to find a good name for a function is a good indication of how clear a concept it is that you're trying 
+    to wrap.
