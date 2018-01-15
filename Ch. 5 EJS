@@ -1,0 +1,18 @@
+Higher-Order Functions:
+Functions that operate on other functions, either by taking them as arguments or by returning them.
+
+    Abstractions hide details and give us the ability to talk about problems at a higher (or more abstract) level.
+    
+    -The forEach loop has two parameters, the first is an array, and the second is a function that will be done on each index
+    of that array.
+    -*But it is better to use it as a method call where you only need to pass it the function.
+    
+JSON 
+    -JavaScript gives us functions, JSON.stringify and JSON.parse that convert data to and from this format.
+    
+Filter: is a method for arrays that takes an array and a function. It stores a new array with only the values that pass the test
+in the function
+
+Reduce: is a method for arrays that takes three arguments. An array, a function that will combine them and what to start them as.
+If you just leave off the start parameter, the function will start with the first index of the array.
+If used as a method, it takes just one parameter, which is the function used to reduce.
