@@ -32,6 +32,7 @@ Verson 6:
     object comparisons pretty much always false unless you save one as the other.
     
 In order to start the debugger, just put a debugger; statement in the JS where you want the program to start.
+You can make a function that takes a function and just runs it with the debugger. 
     
 Refactoring is nonfunctional changes to code to make it easier to use or less complicated.
 
@@ -39,3 +40,9 @@ Button elements have an attribute, ex: onclick="handlers.displayTodos()" which m
 add event listener lines.
 
 The div tag groups elements together and also puts them on a new line.
+
+Javascript has a built in setTimeout function that takes a function and a time in milleseconds. It will run that function when 
+the given time has elapsed. 
+    ex: setTimeout(console.log('hello'), 5000);
+
+
