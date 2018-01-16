@@ -44,5 +44,22 @@ The div tag groups elements together and also puts them on a new line.
 Javascript has a built in setTimeout function that takes a function and a time in milleseconds. It will run that function when 
 the given time has elapsed. 
     ex: setTimeout(console.log('hello'), 5000);
+    
+Functions that accept other functions or return other functions are Higher-Order functions. The functions that are passed to Higher-Order
+functions are called Callback functions.
+
+If you want to have a general event listener for a section of the DOM, you can apply this event listener
+on the largest element in that area and make it decide which to affect.
+
+Search up event delegation.
+
+forEach can take a second argument where you pass in this. This allows you to have this equal to the object that
+forEach was called in, as the Callback function is not a method of the object.
+
+This keyword cheatsheet: https://github.com/gordonmzhu/cheatsheet-js
+
+The window object represents the browser window.
+When you bind a function, it can never be bound again. 
+Bind, apply, and call are all basically the same with a few variations.
 
 
