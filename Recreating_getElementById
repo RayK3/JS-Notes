@@ -1,0 +1,5 @@
+Research: 
+  -getElementById() seems like a specific version of querySelector().
+  -getElementById() is only a method of the document object. Unlike querySelector() and querySelectorAll() which are methods
+  of all element objects. This is because there is no need for a local version of the function due to the fact that each id must be 
+  unique.
