@@ -1,0 +1,32 @@
+Program Structure:
+    Expressions and Statements: 
+    -An expression is a fragment of code that produces a value. 
+    -If an expression corresponds to a sentence fragment, then a statement corresponds to a full sentence.
+        A program is simply a list of statements. These are what end in semicolons.
+        
+    Variables:
+    -To catch and hold a value, programs need variables
+    -After a variable has been defined, its name can be used as an expression
+    -a single var statement may define multiple variables. The definitions must be separated by commas
+        ex: var one = 1, two = 2;
+    
+    Functions:
+    -Executing a function is called invoking, calling, or applying it. You can call a function by putting 
+    parentheses after an expression that produces a function value.
+    -Anything that a function actually does besides producing values is called a side effect. 
+    
+    Prompt and Confirm:
+    -the confirm function shows a dialog box with an ok and cancel button. The user must click a button and the 
+    result is stored as a boolean value. 
+    -the prompt function takes two arguments. The text that is shown in the dialog box, and the initial text to be 
+    shown in a text box. This function returns a string of what the user wrote.
+    
+    isNaN is a function that returns true if the argument given is not a number.
+    
+    Loops:
+    -You can use break to immediately jump out of a loop, which you know how to do
+    -You can also use continue, which skips the loop to its next iteration.
+    
+    
+    
+    
