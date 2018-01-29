@@ -1,0 +1,53 @@
+What is JavaScript?
+  -Web-scripting is the main use of JS
+  -although the syntax is heavily inspired by C++, the inner workings are closer to dynamically-typed, interpreted
+  languages such as Python or Ruby.
+  -It is an interpreted language, not compiled
+  -Node.js allows developers to run JS server-side. This allows entire web applications to be created from just
+  JS, client and server side.
+  -the term REPL is read-eval-print-loop, which is the loop that the console runs in JS. This term is used 
+  to describe any sort of programming shell that allows you to enter code and see results immediately. 
+  
+Data and Variables:
+Numbers: 
+  -Has a single type for both integers and floating point numbers
+  -Three special floating point numbers, Infinity, -Infinity, and NaN. These are used to signal that something
+  strange has happened during computation, such as division by zero or an overflow.
+  -parseInt and parseFloat methods allow the converting of strings to numbers. These take an optional
+  second parameter that determines the base. Because of differences between versions of JS, it is recommended
+  to always pass 10 as the second argument.
+
+The Math Library:
+  -contains useful methods and constants for working with numbers.
+  -Math.E and Math.PI
+  -Math.ceil returns the smallest integer greater than or equal to a number.
+  -Math.floor returns the largest integer less than or equal to a number.
+  -Math.round returns the value of a number rounded to the nearest integer.
+  -Math.cos/sin/tan/acos/asin/atan all return the function of the number as a radian
+  -Math.exp returns e ^ of the number argument
+  -Math.log returns the ln of a number
+  -Math.pow returns the base to the exponent power
+  -Math.sqrt returns the positive square root of a number
+  
+Strings:
+  -no functional difference between single and double quotes. 
+  -They can be treated as an array of characters. With square bracket [] notation.
+  -If you concatenate strings with non-string values, they will first be converted to strings
+Substring search methods:
+  -contains determines whether one string may be found within another string
+  -indexOf returns the index within the calling String object of the first occurrence of the specified value, or -`
+  if not found
+  -lastIndexOf does the same, except looks from the end of the string
+  -toLowerCase and toUpperCase
+  -substr returns the characters in a string beginning at the specified location through the specified number of characters
+  -substring returns the characters in a string between two indices into the string. 
+  
+Undefined and NULL:
+  -If you want to check if something is undefined, do not use the literal 'undefined' value, use typeof instead
+  -null is of type object. 
+  -When converted to a boolean or used in a condition, null and undefined are both falsey values
+Booleans:
+  -falsey values are: 0, NaN, "", null, and undefined
+  -notable truthy values are: [] and {}
+  
+  
