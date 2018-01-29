@@ -1,0 +1,82 @@
+Arrays and Objects:
+Arrays: 
+   -uses square bracket notation
+   -if an array has 7 elements, it is okay to get or set the 8th. This implies that they do not need bounds checking
+   -arrays can be created to include different types
+   -Can create an array of arrays, which is called a multidimensional array
+   -the forEach method is a more succinct version of the for loop. It takes a function
+   
+Array Methods:
+   -pop removes the last element from an array and returns that element
+   -push adds one or more elements to the end of an array and returns the new length
+   -shift removes the first element of the array and returns it
+   -unshift adds one or more elements to the front of an array and returns the new length of the array
+   -reverse reverses the order of the elements of an array
+   -sort sorts the elements of an array (you know the syntax, use if statements to return 1 if you want it
+   to be sorted upwards and -1 if you want it to be sorted down). It can also be called without any arguments, and 
+   it will try its best to sort the data.
+   -concat returns a new array comprised of this array joined with other array(s) and/or value(s)
+   -joins all elements of an array into a string, you can pass it a string argument which will be put between
+   all of the elements of the string.
+   -splice adds and/or removes elements from an array
+   -slice extracts a section of an array and returns a new array.
+   
+Object-oriented programming:
+   -JS supports object-oriented programming (OOP). 
+   -Object-oriented programming is a paradigm of programming that views a program as a collection of entities 
+   called objects. An object consists of data fields, which may be private to the outside world. These data fields
+   are known as instance variables or properties. It also has a number of actions that it knows how to perform.
+   These actions are called methods.
+   -JS differs from other OOP languages such as Java and C++ in that it has no classes. You can create an object
+   that does not have a class per se. There are other mechanisms that replace the usual class and inheritence 
+   systems.
+  -closures allow us to simulate private-instance variables
+  
+Getting and Setting Properties:
+  -dot notation can be used to retrieve and set properties of objects, even if they don't exist yet.
+  -square bracket notation can also be used in the same way, but the name of the property has to be given as a string
+
+There is no forEach method for objects, but you can simulate one like this:
+- for(key in object_name) { ... };
+
+Everthing is an object, besides primitive data types.
+
+Dynamic typing:
+   -Variables in JS are declared without a type. In fact, we can assign a number to a variable, and then later assign
+   a string to the same variable. 
+   -just like using + after a string converts the next object to a string, using * , / , and - operators
+   with a number converts the other object to a number as well.
+   
+Functions: 
+Definition and Invocation: Functions are units of code that can be defined and then invoked later. They break
+code into more readable, logical blocks.
+   -Two ways to define a function:
+      - Function Definition:
+         -var fn = function() {...}
+         -function fn() {...}
+   -Function definition = creating a function
+   -Function invocation = running a function.
+Parameters:
+   -It is legal to call a function with a different number of parameters as in its declaration. If we call a function
+   with fewer parameters than in the definition, then the parameters are assigned from left to right, and the
+   remaining parameter variables will be set to undefined.
+   -If we call a function with more parameters than in the definition, then all available parameter variables will
+   be bound to the parameters. The remaining parameters will not be bound to parameter variables.
+   -However, it is possible to recover the extra parameters through the arguments variable. arguments is an array-like
+   object that contains all the parameters passed to the function. It is zero-indexed from left to right. We
+   can index arguments to recover the extra parameters.
+   -When a function is happy with different numbers of parameters, it is said to be variadic. Variadic functions are
+   very common, and can be found in the standard JS library.
+   
+Optional Parameters:
+   -C++ and Java both have support for optional parameters. A function with optional parameters can be called with less than the maximum number
+   of parameters. If there are missing parameters, they are filled in using default values.
+
+Anonymous Functions:
+   -Also known as lambda functions, are functions that do not have a name. They are usually transient functions.
+   -in the first example of function declaration above, it is actually a lambda function being set to a variable.
+   -when functions are capable of taking other functions as parameters, these parameters are called callback functions.
+
+  
+   
+   
