@@ -1,19 +1,100 @@
 Question: 
           Search for the psychology behind sentiment and why it is really important to the company
+          Find Three or so resources that explain the concept well and summarize them each in about 1-2 paragraphs. 
+          Then just link the page where you found them.
 
+Links: 
+          http://www.dictionary.com/browse/sentiment
+          https://mashable.com/2010/04/19/sentiment-analysis/#b7cfD0di45qh
+          https://thenextweb.com/contributors/2017/08/06/5-ways-sentiment-analysis-can-boost-business/
+          https://www.promptcloud.com/blog/using-sentiment-analysis-for-business-growth
+          
 Sentiment Definition:
     -An attitude toward something; regard; opinion -> http://www.dictionary.com/browse/sentiment
     -A mental attitude. A thought that has been influenced by emotion. The sentiment is what can get expressed
-    
-Sentiment Analysis:
+    -from fourth link:
+          Sentiment analysis works at two levels - 
+          1. Gathering and assessing opinions and comments of individuals and groups
+          2. Apply a logical scoring mechanism to quantify the attitudes and opinions
+Sentiment Analysis: 
 
 https://mashable.com/2010/04/19/sentiment-analysis/#b7cfD0di45qh
 
     -The process that “aims to determine the attitude of a speaker or a writer with respect to some topic" -> from Wikipedia
-    -How a brand's public sentiment compares to its competitors is very telling sign of their social media health. It is more important
-    than the flat percentages.
+          In layman's terms, this is the opinion expressed by someone towards a topic
+    -When using purely human sentiment analysis, it has been shown that humans only agree 79% of the time. 
+    This means even when the raw accuracy of automated sentiment analysis is well below perfect, statistically, it can be thought 
+    of as more accurate when compared to human analysis. It is 'as good as it gets'.
+    -How a brand's public sentiment compares to its competitors is a very telling sign of their social media health. It is more important
+    than the flat percentages. 
+          It is an easy way of judging how popular their company is compared to the competition. This can be
+          expanded to locate which regions would need the most action to improve their social media health.
     -Entity sentiments specifically allow for more in depth study of the persons actual views, as the topic of their discussion is 
     much smaller.
     -Their should be a way for users to develop a reputation. "If someone's negative sentiment indexes higher than average, then that person's
     negative sentiment should be somewhat discounted".
+    
+https://thenextweb.com/contributors/2017/08/06/5-ways-sentiment-analysis-can-boost-business/
+
+    -"Sentiment analysis applies to social media platforms and blogger outreach platform to study the behaviours
+    and reactions of audiences and their responses to contents."
+    -"Knowing the emotion behind a post can supply valuable context for you on how to respond and proceed with 
+    your next business agenda"
+    -"sentiment analysis can also understand and track purchase intent ... Marketing managers can utilize it
+    to evaluate how the latest campaigns are affecting brand sentiment as well as highlight which demographic segment
+    generates the most interest.
+    -Allows the company to adjust the tone of their posts, and stops them from being 'tone-deaf'
+    -Allows for quick, efficient reactions from negative sentiments
+    -this sort of sentiment analysis is the most important among places such as hotels, shops, and restaurants
+    "When you're interacting with the public face-to-face, and rely upon favorable reviews for business, it's 
+    paramount to tune into your customer's feelings towards your brand in a consistent matter." 
+    -It also allows you to convert a bad customer experience into a positive one by delving deeper into that persons
+    individual review
+    -keyword monitoring allows PR to find thought leaders and influencers having conversations about their brand. 
+    -Above all else, the moe data you gather about your audience and industry, the higher chance of success you will have
+    
+https://www.promptcloud.com/blog/using-sentiment-analysis-for-business-growth
+
+    -Most sentiment analysis is built around machine learning and attributing positive or negative scores to individual
+    words. The overall sentiment of a phrase or comment is just the sum of the individual sentiments. This
+    makes it hard, as some words could be misattributed do to the algorithm's inability to read context
+    -"You can tailor your marketing and outreach programmes based on the reactions you encounter for a particular
+    line of product."
+    -"Sentiment analysis is widely used by customer support representatives as they can respond promptly and 
+    more efficiently to building dissatisfaction before the negative sentiment hurts your business."
+    -Sentiment analysis is especially important for B2C (Business to Customer) businesses as every negative comment
+    will be viewed by others. This makes it imperative that the business respond to it and display empathy
+    or suggest measures to reduce the satisfaction. The added bonus is that your quick response time to satisfy 
+    a customer will possibly win more business as well. 
+    -(Speaking about disgruntled employees and customers) "Only when you know about their existence, will you 
+    be able to remedy their complaints". <-- I like this a lot
+    -It is often useful to include human analysis when a specific mention is more important than others. This 
+    will provide a more accurate picture of the mood of the customer.
+    -sentiment analysis needs to be an on-going activity and needs non-stop serious commitment.
+    
+https://www.businessnewsdaily.com/10018-sentiment-analysis-improve-business.html
+
+    -"Sentiment analysis is also defined as opinion mining: the science of harnessing and analyzing consumer's
+    conversations to understand whether consumers feel "positive", "negative" or "neutral" about a certain brand, product or topic"
+                   -Maxime-Samuel Nie-Rouquette, client success manager at Semeon Analytics
+    -"It's not enough to know the 'average sentiment' regarding a brand - that would be like knowing the 'average
+    weather' for the entire planet tomorrow."
+                   -Sean MacPhedran, an ecommerce specialist at Smith.co
+    This means that you need to study several variables and track their specific sentiment. This ensures that
+    the information that you get is able to be used effectively.
+    -A big drawback of sentiment analysis is the lack of accuracy with small data samples. It requires thousands 
+    of data points normally to gain actionable insights. This raises the importance of retailers to ensure
+    that they engage their communities to foster some conversations.
+    
+https://towardsdatascience.com/five-practical-use-cases-of-customer-sentiment-analysis-for-nps-a3167ac2caaa
+
+    -Most algorithms are designed to handle large pieces of text like news articles. They might not work on customer reviews
+    -The way that a customer writes a support ticket is different to how they will respond to a survey, or write
+    a facebook post to their friends. It is important to tailor the analysis to the medium
+    -Businesses need to identify aspects that customers comment on: what are customers specifically happy
+    or unhappy about? (These appear to be the same concept as what you know as entities)
+    
+    
+    
+             
     
