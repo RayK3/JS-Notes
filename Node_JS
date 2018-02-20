@@ -1,0 +1,12 @@
+General Knowledge about the JS runtime, and Node JS:
+
+In javascript, you can only run one thing at a time. You can kind of get around this by using built in web api's
+which can also run one thing at a time. An example is ajax, or setTimeout. When these function calls start,
+they are sent to the web api to finish, and are removed from the call stack. When they finish, their return
+is sent to the task queue which waits for the call stack to be empty before putting its contents back into
+the stack. This is a way of asynchronous programming.
+
+-A promise is like the receipt at a burger place. You know you will get the burger at a later time, but you can
+still start to think about the burger and figure out some of the things you will do with the burger, even
+though you may not have it yet. 
+-Promises help manage concurrency
