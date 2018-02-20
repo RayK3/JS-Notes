@@ -1,0 +1,112 @@
+Node.js
+
+    -a difficult problem with writing systems that communicate over the network is managing input and output.
+    This is reading and writing of data to and from the network. Asynchronous programming can be extremely helpful.
+
+    -When Node.js is installed on a system, it provides a program called node. You can run files like this:
+        $ node {filename}
+
+    -If you run node without giving it a file, it provides you with a prompt at which you can type JavaScript code and
+    immediately see the result.
+
+    -The process binding is available globally in Node. It gives various ways to inspect and manipulate the current
+    program. The .exit({number}) ends the process and can be given an exit status code. This works the same way 
+    as a return 0 would at the end of your main in c++;
+
+    -process.argv gives an array of strings corresponding to the command-line arguments given to the script. Although,
+    since it gives the name of the node command and the script name, the actual arguments start at index 2.
+
+    -There is a built in function named require, that is used to load anything from build-in modules to downloaded
+    libraries to files that are part of your own program. 
+        When require is called, Node has to resolve the given string to an actual file to load. "./" means that the 
+        file belongs to the current directory, "../" means one directory up, and "/" means the root of the file
+        system. 
+    
+NPM: an online repository of JavaScript modules, many of which are specifically written for Node. When
+    you install Node on your computer, you also get the npm program, which provides a convenient interface to this 
+    repository.
+    
+    Its main use is downloading packages. We can use NPM to fetch and install packages on our computer.
+    If we use npm install {filename} then it is installed. We then can use node require("{filename}")
+    
+Versions: A package.json file lists both the program's own version, and versions for its dependencies.
+
+    NPM demands that its packages follow a schema called semantic versioning, which encodes some information about
+    which versions are compatible (don't break the old interface) in the version number. A semantic version consists
+    of three numbers, separated by dots. Every time new functionality is added, the middle number has to be incremented.
+    Every time compatibility is broken, the first number has to be incremented. 
+
+    -The npm command is also used to publish new packages or new versions of packages. If you npm publish in a directory
+    that holds a package.json file, it will publish a package with the name and version listed in the JSON file to 
+    the registry. 
+
+The File System Module
+
+    One of the most commonly used built-in modules in Node is the fs module, which stands for file system. This
+    module provedes functions for working with files and directories.
+    
+The HTTP Module
+
+    It provides functionality for running HTTP servers and making HTTP requests.
+    
+    To create a simple HTTP server example: 
+    
+    const {createServer} = require("http");
+    let server = createServer((request, response) => {
+      response.writeHead(200, {"Content-Type": "text/html"});
+      response.write(`
+        <h1>Hello!</h1>
+        <p>You asked for <code>${request.url}</code></p>`
+        response.end();
+    });
+    server.listen(8000);
+    
+    To act as an HTTP client example:
+    
+    const {request} = require("http");
+    let requestStream = http.request({
+        hostname: "eloquentjavascript.net",
+        path: "/20_node.html",
+        method: "GET",
+        headers: {Accept: "text/html"}
+    }, response => {
+        console.log("Server responded with status code",
+                      response.statusCode);
+    });
+    requestStream.end();
+
+Streams
+
+    Both the requestStream and response streams are both examples of streams. 
+    Writable streams are a widely used concept in Node. Such objects have a write method, which can be passed
+    a string or a Buffer object, to write something to the stream. Their end method also optionally takes 
+    a value to write to the stream, and will close the stream after writing--or right away if none is given.
+    Both of these can also be given a callback as an additional argument, which they will call when the writing to
+    or closing of the stream has finished.
+    
+    A server reads requests and then writes responses, whereas a client first writes a request and then reads a response.
+    
+    Objects that emit events in Node have a method called on that is similar to the addEventListener method
+    in the browser. You give it an event name and then a function. It will register that function to be called
+    whenever the given event occurs. 
+    
+    Readable streams have "data" and "end" events. "data" is fired every time data comes in, and "end" is called 
+    when the stream is at its end. 
+        The data that returns will be a binary Buffer. You can decode it into a string as UTF-8 encoded characters
+        with its toString method
+        
+A File Server
+    An HTTP server that allows remote access to a file system. Such a server has all kinds of uses. It allows
+    web applications to store and share data or give a group of people shared access to a bunch of files. 
+    
+    When we treat files as HTTP resources, the HTTP methods GET, PUT, and DELETE can be used to read, write,
+    and delete the files. We don't want to share our whole file system, so we'll interpret these paths as starting
+    in the server's working directory, which is the directory in which it was started. 
+    
+    
+        
+
+    
+    
+    
+    
