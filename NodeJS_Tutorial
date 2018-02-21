@@ -1,0 +1,46 @@
+What is Node.js?
+  Node.js is a server-side platform built on Google Chrome's JavaScript Engine (V8 Engine). 
+  It is built on Chrome's JavaScript runtime for easily building fast and scalable network applications
+  
+  Node.js also provides a rich library of various JavaScript modules which simplifies the development of
+  web applications using Node.js to a great extent
+  
+Who Uses Node.js?
+  The list includes eBay, General Electric, GoDaddy, Microsoft, PayPal, Uber, Wikipins, Yahoo!, and Yammer
+  
+Creating Node.js Application
+  There are three important components:
+     Import required modules - We use the require directive to load Node.js modules
+     
+     Create server - A server which will listen to client's requests similar to Apache HTTP Server
+     
+     Read request and return response - The server created will read the HTTP request made by the client
+     which can be a browser or a console and return the response
+     
+ Node Package Manager (NPM)
+ Two main functionalities:
+    -Online repositories for node.js packages/modules which are searchable on search.nodejs.org
+    -Command line utility to install Node.js packages, do version management and dependency management
+    of Node.js packages.
+    
+    To install modules using NPM, just use npm install <module Name> (you know this)
+    
+    Local vs Global Installation 
+       Local:
+       By default, NPM installs any dependency in the local mode. Locally deployed packages are accessible
+       via require() method. They are installed in the node_modules directory (which is in the same folder
+       as node)
+       Global:
+       Globally installed packages/dependencies are stored in system directory. Such dependencies can
+       be used in CLI function of any node.js but cannot be imported using require() in Node directly.
+       
+   What is a Callback?
+      Callback is an asynchronous equivalent for a function. A callback function is called at the completion
+      of a given task. Node makes heavy use of callbacks. All the API's of Node are written in such a way that
+      they support callbacks. A function reading a file will start reading the file and return the control to the
+      execution environment immediately so that the next instruction can be executed. This makes Node.js highly scalable,
+      as it can process a high number of requests without waiting for any function to return results.
+       
+    
+    
+    
