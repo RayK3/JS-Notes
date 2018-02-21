@@ -1,0 +1,6 @@
+What's making Node more popular than Rails and other alternatives?
+    It's basically JavaScript plus a bunch of C/C++ under the hood for things like interacting with the
+    filesystem, starting up HTTP or TCP servers and so on.
+    
+    Since it uses callbacks, it can handle concurrent operations without multiple threads of execution, so
+    it can scale pretty well.
