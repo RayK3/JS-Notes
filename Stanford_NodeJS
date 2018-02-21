@@ -74,7 +74,7 @@ Routes
   We can create more routes for the app using the get and post methods. get creates routes for the HTTP GET
   method, while post creates routes for the HTTP POST method. Both get and post take the URL as the first parameter
   and a callback function as the second. The callback function is passed req, the request object, and res,
-  the response objecvt. req contains info about the browser's request. res should be used to send the server's response
+  the response object. req contains info about the browser's request. res should be used to send the server's response
   using the send and end methods. 
   
 Parameters
