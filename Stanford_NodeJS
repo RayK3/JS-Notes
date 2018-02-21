@@ -1,0 +1,111 @@
+Node.js
+
+What is Node.js?
+  Node.js is a software package consisting of a JavaScript engine and a number of asynchronous input / output
+  libraries. It allows you to run JavaScript on the command line, outside of your browser. It is a fast, 
+  event-based web server.
+  
+Loading Modules
+  You can use the command require to import external libraries. 
+    -ex: var http = require("http");
+  By convention, the variable name is the same as the module name, but you can also pick any variable
+  name you like. 
+
+Installing Modules
+  Recent versions of Node.js come with a package manager called npm, which allows you to download
+  and install modules easily. To install a package, run npm install package_name on the command line.
+  
+  Another way to install a module is by saving them as 'package.json' in the same folder as your application,
+  and then running npm install in that folder. Then npm will install the dependencies locally in the application. 
+  
+  Dependencies are another key in the package JSON, and they are the other libraries with their version numbers.
+  This is also an object, ex:
+    "dependencies": {
+          "express": "3.2.x",
+          "ejs": "0.8.x"
+    }
+  
+Your First HTTP Server
+  var http = require('http');
+  http.createServer(function (req, res) {
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.end('Hello World\n');
+  }).listen(1337, '127.0.0.1');
+  console.log('Server running at http://127.0.0.1:1337/');
+  
+  The code first loads the HTTP library. It then creates a new server, and sets a callback function that will
+  be called whenever a browser connects to the server. The server is then set to listen to incoming connections
+  at 127.0.0.1.1337 using the listen command. 
+  
+  The server will call the provided callback function whenever it receives a request. The two parameters passed 
+  in are req: the request object, and res: the response object. 
+  
+  The problem with the HTTP library is that it is very low level. It allows you to operate directly on the HTTP request
+  and response objects, but it doesn't give you any higher-level abstractions that would help you build a web application.
+  
+  Some drawbacks: You only get to specify a single callback function. You have to retrieve the URL from the 
+  req parameter and match it with your list of available URLs manually. You need to set response headers manually.
+ 
+Web Frameworks
+  This is a collection of tools and libraries designed for web applications. These can make our life easier by 
+  handling common functionality that is used in web applications such as routing, templating, sessions, etc. Examples 
+  are Rails and Django.
+  -microframeworks are like normal frameworks, but they provide a more minimalistic set of tools. Node.js has
+  its own popular microframework called Express. 
+  
+Express
+  This is the equivalent application in Express:
+      var express = require("express");
+      var app = express();
+      app.get("/", function(req, res) {
+        res.send("Hello world!");
+        res.end();
+      }).listen(1337);
+      console.log('Server running at http://127.0.0.1:1337/');  
+  
+  This example loaded the Express module, created an application, defined a new route, and then made the 
+  server listen for new connections. 
+  
+  It is very similar to the old server, but notice the improvements. We can now specify that our handler should
+  handle only the GET method on the "/" url. We also got rid of having to fiddle around with the headers on
+  the response. 
+  
+Routes
+  We can create more routes for the app using the get and post methods. get creates routes for the HTTP GET
+  method, while post creates routes for the HTTP POST method. Both get and post take the URL as the first parameter
+  and a callback function as the second. The callback function is passed req, the request object, and res,
+  the response objecvt. req contains info about the browser's request. res should be used to send the server's response
+  using the send and end methods. 
+  
+Parameters
+  You can get query parameters in the callback functions. You can access GET parameters through the 
+  req.query object. 
+  
+Static Files
+  We can use Express as a static file server as follows:
+  
+  var express = require("express");
+  var ejs = require("ejs");
+  app.use(express.static(__dirname + "/public"));
+  app.listen(1337);
+  
+  This tells Express to use /public as the directory from which files are served. If the server recieves
+  a request that does not match any of the routes, but matches a file in that directory. 
+
+Views
+  Views allow us to specify a template for a page, and then dynamically fill in information to the page. 
+  
+  var express = require("express");
+  var app = express();
+  app.set("view engine", "ejs");
+  app.set("views", __dirname + "/views");
+  app.get("/", function(req, res) {
+        res.render("hello", {"greeting": Hello world!});
+  }).listen(1337);
+  
+  We use the set command to select EJS as the templating engine, then we set the folder to the /views directory. 
+  
+  In the handler for /, we simply call the render method, specifying the name of the template to use, and
+  the data that should be passed to the template. Any data that is passed to the template will become local
+  variables within the variables.
+  
