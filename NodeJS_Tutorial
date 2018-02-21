@@ -17,30 +17,49 @@ Creating Node.js Application
      Read request and return response - The server created will read the HTTP request made by the client
      which can be a browser or a console and return the response
      
- Node Package Manager (NPM)
- Two main functionalities:
-    -Online repositories for node.js packages/modules which are searchable on search.nodejs.org
-    -Command line utility to install Node.js packages, do version management and dependency management
-    of Node.js packages.
+Node Package Manager (NPM)
+Two main functionalities:
+   -Online repositories for node.js packages/modules which are searchable on search.nodejs.org
+   -Command line utility to install Node.js packages, do version management and dependency management
+   of Node.js packages.
     
-    To install modules using NPM, just use npm install <module Name> (you know this)
-    
-    Local vs Global Installation 
-       Local:
-       By default, NPM installs any dependency in the local mode. Locally deployed packages are accessible
-       via require() method. They are installed in the node_modules directory (which is in the same folder
-       as node)
-       Global:
-       Globally installed packages/dependencies are stored in system directory. Such dependencies can
-       be used in CLI function of any node.js but cannot be imported using require() in Node directly.
+   To install modules using NPM, just use npm install <module Name> (you know this)
+   
+   Local vs Global Installation 
+      Local:
+      By default, NPM installs any dependency in the local mode. Locally deployed packages are accessible
+      via require() method. They are installed in the node_modules directory (which is in the same folder
+      as node)
+      Global:
+      Globally installed packages/dependencies are stored in system directory. Such dependencies can
+      be used in CLI function of any node.js but cannot be imported using require() in Node directly.
        
-   What is a Callback?
-      Callback is an asynchronous equivalent for a function. A callback function is called at the completion
-      of a given task. Node makes heavy use of callbacks. All the API's of Node are written in such a way that
-      they support callbacks. A function reading a file will start reading the file and return the control to the
-      execution environment immediately so that the next instruction can be executed. This makes Node.js highly scalable,
-      as it can process a high number of requests without waiting for any function to return results.
-       
-    
+What is a Callback?
+     Callback is an asynchronous equivalent for a function. A callback function is called at the completion
+     of a given task. Node makes heavy use of callbacks. All the API's of Node are written in such a way that
+     they support callbacks. A function reading a file will start reading the file and return the control to the
+     execution environment immediately so that the next instruction can be executed. This makes Node.js highly scalable,
+     as it can process a high number of requests without waiting for any function to return results.
+      
+How Node Applications Work
+     This is an example of an async function:
+     var fs = require("fs");
+     
+     fs.readFile('input.txt', function (err, data) {
+        if (err) {
+           console.log(err.stack);
+           return;
+        }
+        console.log(data.toString());
+     });
+     console.log("Program Ended");
+     
+     When you need to use an async function, there must be error checking included.
+     
+     In Node Application, any async function accepts a callback as the last parameter and a callback function accepts
+     an error as the first parameter.
+     Here fs.readFile() is an async function whose purpose is to read a file. If an error occurs during the read
+     operation, then the err object will contain the corresponding error, else data will contain the contents of
+     the file. readFile passes err and data to the callback function after the read operation is complete.
     
     
