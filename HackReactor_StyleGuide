@@ -1,0 +1,97 @@
+Style Guide:
+  It is better in many ways to write code that is clean and consistent. Code with lots of inconsistencies
+  requires more mental effort from the code reader. Often that confused code reader is you.
+  
+  Indentation: 
+    When writing any block of code that is logically subordinate, that block should be indented two spaces
+    more than the surrounding lines. 
+    
+    Indent with spaces! You have a bad habit of using the tab key. 
+    
+  Variable Declaration:
+    Use a new line for each variable declaration, and use a new var statement for each line you declare a 
+    variable on.
+    
+  Naming:
+    Variable Names:
+      A single descriptive word. Descriptive means it's directly describing some noun in the 'domain' of your
+      problem. Name your variables after their purpose, not their structure. 
+      
+      Collections such as arrays and maps should have plural noun variable names. 
+      
+    Boolean Names:
+      Since a boolean either is true or false, typically you prefix teh variable name with is or are. 
+        ex: isValid or areAvailable
+        
+    Function Names:
+      Function names should start with a verb followed by an object.
+        ex: calculateTotal or listInventory
+      This makes it self-describing, telling the code reader at a glance what the function's input and output
+      are as well as a summary of the processing that transforms the former to the latter.
+      
+    Capital letters in variable names:
+      Most people choose to use capitalization when the variable contains a class.
+      Or, people use a capital letter only on functions that are written to be run with the keyword new. 
+      Use all-caps for constant variables.
+      
+    Symbols/Punctuation:
+      Don't omit braces, even though they are technically optional.
+      
+      Prefer single quotes around JavaScript strings, rather than double quotes. They allow for easy embedding 
+      of HTML. 
+      
+      Don't forget semicolons at the end of lines, even though the runtime will usually figure it out anyway.
+      
+    Operators and keywords:
+      Use strict comparison operators (===), since (==) will automatically convert types in ways you're unlikely
+      to expect. 
+      
+      Only use the ternary operator when it is incredibly simple to use and read. It can just make things messy
+      if you aren't careful.
+      
+    Switch Statements:
+      Avoid use of switch statements altogether. They are error prone due to missing break statements.
+      
+    Brevity:
+      Write the least code you can that is still completely clear. You want to write just enough code to be 
+      self-describing.
+      
+    Avoid Negation:
+      Whenever you find yourself with lots of negation, you might have an opportunity to increase clarity by
+      converting it to positive. 
+      
+    Return boolean results directly:
+      Whenever you are returning true or false from within a conditional, you might have an opportunity for brevity.
+    
+    Spacing:
+      Conserve vertical space by minimizing the number of lines you write. The more concisely your code is 
+      written, the more context can be seen in one screen. 
+      
+      Try to make it easy to read in one glance. 
+        This goal is in conflict with the line quantity goal, so you must do your best to balance them.
+      
+      Spacing around comma's:
+        You should always leave a space following a comma.
+        
+      Spacing around operators:
+        You should leave a space on both sides of the operator.
+        
+    Code Comments:
+      Code comments are usually less effective than good naming.
+      Having to write comments suggests that your coee structure and naming are not sufficient to 
+      convey the "story". That's a bad sign.
+      
+      Comments make a file longer and drift out of sync with the code they annotate. 
+      
+      If you do comment, then comment on the purpose of the code (the 'why'), not the mechanics of 
+      implementing it (the 'how').
+      
+      Don't leave stray comments sitting in your code. Just delete unnecessary / outdated / temporary-scaffolding
+      type of comments. 
+      
+    JavaScript gotchas
+      Using the new machinery (such as `${}`) will often just obscure your logic and overwhelm yourself. 
+      It is best to keep it simple when possible.
+      
+      Do not use for ... in statements with the intent of iterating over a list of numeric keys. Use a
+      for-with-semicolons statement instead. 
