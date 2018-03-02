@@ -1,0 +1,26 @@
+Clean VersusUncleanCoding
+  Clean code tells the code reader a story about what it is doing. It is self-describing and transparent.
+  This is where it is very beneficial to split out a couple of helper functions that each did only one small thing. 
+  It should tell a STORY. It has a beginning, a middle, and an end. It flows smoothly. 
+  It should be easy to keep track of what's going on at any given moment. 
+  
+  How do I get the code to tell a story, exactly?
+    - Assemble your solution from small, single-purpose functions that have no side effects.
+    - Aim for a simple, clear flow of data from small function to small function
+    - Think in terms of inputs and outputs at every level of your system. Each small function transforms its
+    input into an output.
+    -Use precise, self-describing names for your functions and variables. 
+    -Remember to use 'verbObject' like renderList for function names. 
+    
+Outlining and Stubs
+  - Outlining your strategy in plain but precise English makes it easier to evaluate your strategy on its actual
+  merits. Whereas if you go straight to raw code, you run a high risk of immediately getting immersed in syntactical
+  details and not properly evaluating what you're planning to write. 
+  - If you keep your plan of attack at a higher level of abstraction, your written program 'skeleton' will
+  really help you keep your mind straight about what code to write next, and why. This is often referred
+  to as being PSEUDOCODE. 
+  
+  - Stubbing: a stub function is a function that has been defined in code but its implementation is 
+  intentionally missing. It's a kind of placeholder. It helps to sketch out the 'skeleton' of intent even further.
+  - Key variables and function names can still be written in English. Functions should have clearly defined
+  parameters and return values. 
