@@ -1,0 +1,30 @@
+A practical mental model of computer memory
+  Memory is like a big suburb full of houses with addresses, and a variable is an easy-to-remember/easy-to-read
+  label like 'Ray's house', which translates to 3333 Turner Road, Wherever, Whatever. The value is
+  whatever's IN the house. 
+  
+  You can have more than one label for a house. 
+  
+  If that house just contains a simple data type, then when you send a messenger over to pick up a package
+  from there, you just get that one thing back. 
+  
+  If that house contains an OBJECT VALUE like an Array or an Object, then when you send a messenger
+  over to pick up a package from there, you get a box back. You have to yourself open that box to get 
+  whatever is useful inside. There could be other boxes inside that first box you get back.
+  
+Functions and reliable systems
+  A system is 'a set of interconnected COMPONENTS that form a complex whole. The single most-useful componenet\
+  for you, as a beginning programmer, is a FUNCTION.
+  
+  Components should be:
+    Completely reliable,
+    Easy to understand,
+    Easy to re-use,
+    Easy to connect with other components
+    
+  Functions should be like mathematical functions
+    -They are reliable: Given some input, a valid mathematical function will only map to one output
+    -They are self-contained: They only accept input. There is no Global State. They do not refer to values
+    other than the input. 
+    -They have no side effects: They only evaluate to their output. They do not affect values outside themselves.
+    -They do one thing: Because of the previous two points, they can be understood as doing only one thing. 
