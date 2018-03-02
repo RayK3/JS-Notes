@@ -1,0 +1,71 @@
+Testing, and the value thereof
+  - When we say 'testing' here, we do NOT mean manual testing where a person clicks around and drives the 
+  program's user interface with their own mouse and keyboard. 
+  - We are talking about AUTOMATED TESTS, in particular the style called a UNIT TEST. 
+  - The point of an automated test is to capture the manual steps and human discernment that would be applied
+  by a human tester and run them at high speed and with perfect fidelity over and over. 
+  
+  What's a 'unit test'?
+  - A reliable system is composed of reliable components. The components of your program need to behave similarly
+  to Lego blocks. If they honor their contracts with each other, then you can build up a very complex software
+  system with them. If they don't, however, then everything will turn into an unmaintainable mess. 
+  - How do you know that each component in your software system is honoring its interface properly?
+    You use a unit test. Each 'unit' is a componenet of your system. It's a Lego block. 
+    You should be unit-testing any non-trivial functions in your programs. 
+    
+  - It is extremely easy to confuse ourselves with accidental complexity as we write programs. Testing each
+  component as we go helps to ensure that we keep track of what we are building. 
+  
+  - If you ever find yourself sprinkling console.log statements all over the place to figure out what on earth
+  your program is doing anymore, you probably could have used some small tests to verify things better as you
+  go. 
+  
+  - Unit testing is built around the concept of Assertions.
+    Programmers ASSERT that such-and-such is TRUE about the unit under consideration. 
+    
+  - Right now, you don't need to use a fully functioning test framework, but it is still very helpful to write
+  out a simple assertion helper function yourself trivially, something that prints out whether the test passed or failed.
+  
+  - Terminology note: Assertions are not unit tests!!!
+    - An assertion is a statement that something is true or false about the behavior of your program. 
+    - In order to be able to make an assertion, you usually have some setup to do. 
+    - You prepare some input, and an expected output. If there are classes involved then you ually have to
+    instantiate an instance of that class. You might be asserting something about step 3 of a 4-step flow. 
+    Then you have to run through steps 1 and 2 to prepare to evaluate the result of running step 3. 
+    
+    - All that setup, outside of the assertion itself, is still part of your test.
+    
+    - When you are testing one of your functions, you want to similarly apply CATEGORICAL REASONING to
+    identify test cases that sufficiently explore the full contract of the code under test. 
+    
+    - You should never put your test inside the code that you are testing (aka 'the code under test').
+    
+    How do I write unit tests?
+      - There are a few different styles you can use in this phase of learning, and in an interview context.
+      
+      Inline console logs style
+      - You can just drop a direct console.log statement if you are really pressed for time. No assertEquals type of
+      helper functions, just raw logging. 
+      - This is the most verbose and repetitve and can rapidly get really messy! So, beware. BUT if you have
+      a very small program and very simple assertions, you can use this judiciously to make rapid progress
+      and keep moving. 
+      
+      Named test functions style
+      - If you want to be extra-tidy, make a distinct, named test function for each test. 
+        - This is very clean and professional, but you need to type fast to make this work well in an interview
+        context.
+        
+      Inline but with assertion helpers style
+      - This is a compromise between the above two styles. The tests themselves do not have function wrappers,
+      but you save some repetition by leveraging assertion helpers like areArraysEqual or whatever you need. 
+      
+      - Like dropping console.log statements, this too can quickly get a little bit messy, so be careful. That
+      said, you also save quite a bit of typing, and in an interview context, time is of the essence. 
+      
+      Naming Tests
+      - Someone should be able to look at the name of your test and immediately be able to ascertain what
+      the test actually tests. 
+      - No two tests should have the same name.
+      - Don't just name your test after a function that it is testing. 
+      - Don't use the name of the function at all in your test name. 
+  
