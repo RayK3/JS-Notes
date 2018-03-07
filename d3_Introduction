@@ -1,0 +1,54 @@
+d3 Stands for Data Driven Documents, and it is a very open to interpretation visual data mapping software. It is all about
+finding the best and most intuitive way to map data to understandable visuals. 
+
+Method Chaining: In d3, there is a really common practice of method chaining, where you will have many lines in a row all just adding on
+  one method or attribute.
+  
+Scales: 
+  Linear: These scales match a domain of data values to a range of pixel values, so like 
+    d3.scale.linear()
+      .domain([0,1])
+      .range([2, 525]);
+      
+  Log: These scales are very similar to Linear, except they are scaled to a log function.
+  
+  Sqrt: " " square root function
+  
+  Ordinal: These scales map discrete values like 
+    d3.scale.ordinal()
+      .domain(['A', 'B', 'C'])
+      .range(['Apple', 'Banana', 'Coconut']); // You need the same amount in the range and the domain
+    - You can also give the ordinal scale a rangePoints property like rangePoints([1, 100]); This evenly subdivides the 
+    range based on the number of domain points and maps each to its corresponding number within the range.
+      - A very similar process is the rangeRoundPoints which does the same except it rounds the numbers within.
+  
+      
+In order to use d3, you must use a svg element on the page (Scalable Vector Graphics).
+
+Binding Data to Graphics:
+  This is the strength of d3. It is essentially a DOM manipulation library. An example is like this:
+  var svg = d3.select("body").append("svg")
+              .attr("width", 200)
+              .attr("height", 250);
+  svg.selectAll("rect")
+    .data([1, 2, 3, 4, 5])
+    .enter().append("rect")
+    .attr("x", function(d) { return scale(d); })
+    .attr("y", 50)                                  // enter only applies the methods to data points not previously mapped to dom
+                                                    // elements. In this way, it can not be used for updating. 
+                                                    
+  Since enter() only gets called on data points that did not have any element in the DOM to be mapped on, you can just set new 
+  attributes to the old ones if you wish. 
+  
+  You can use exit().remove() if you want to remove data points. This will be called if there are more dom elements than data points 
+  given. 
+    
+  Notice the method chaining.
+  
+You can append a group element to an svg element. When you use this g element to form a space inside the svg, you must append elements to
+the g element instead of the svg. 
+  
+  
+  
+  
+      
