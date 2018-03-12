@@ -1,0 +1,227 @@
+What is jQuery?
+  jQuery is a lightweight, "write less, do more", JavaScript library. 
+
+  The purpose of jQuery is to make it much easier to use JavaScript on your website. 
+
+  The jQuery library contains the following features:
+    -HTML/DOM manipulation
+    -CSS manipulation
+    -HTML event methods
+    -Effects and animations
+    -AJAX
+    -Utilities
+    
+jQuery Syntax
+  The jQuery syntax is tailor-made for selecting HTML elements and performing some action 
+  on the element(s).
+  
+  Basic syntax: $(selector).action()
+  
+The Document Ready Event
+  $(document).ready(function() {
+    //jQuery methods go here...
+  });
+  
+  or...
+  
+  $(function() {
+    //jQuery methods go here...
+  });
+  
+  This is to prevent any jQuery from running before the document is finished loading (is ready).
+  
+  It is good practice to wait for the document to be fully loaded and ready before working with it.
+  This also allows you to have your JavaScript code before the body of your document, in the head
+  section. 
+  
+jQuery Selectors
+  jQuery selectors allow you to select and manipulate HTML element(s).
+  
+  jQuery selectors are used to "find" (or select) HTML elements based on their name, id, classes, types,
+  attributes, values of attributes and much more. 
+  
+  The #id Selector
+    The jQuery #id selector uses the id attribute of an HTML tag to find the specific element. 
+    
+    An id should be unique within a page, so you should use the #id selector when you want to find a single, 
+    unique element.
+    ex:
+      $("#test")
+      
+  The .class Selector
+    This is to find all elements within a specific class. To find elements with a specific class, write 
+    a period character, followed by the name of the class:
+    ex:
+      $(".test")
+      
+  Special Selectors
+    To select all elements, use $("*")
+    
+    To select the current HTML element, use $(this)
+    
+    To select elements with a specific attribute, use $("[attribute]")
+    
+    To select all even or odd elements of some type, do :even or :odd 
+    ex: 
+      $("tr:odd") to select all odd table rows.
+      
+      
+jQuery Event Methods
+  jQuery is tailor-made to respond to events in an HTML page. 
+  
+  What are Events?
+  All the different visitor's actions that a web page can respond to.
+  
+  ex: Keyboard Events           Form Events           Document/Window Events
+      keypress                  submit                load
+      keydown                   change                resize
+      keyup                     focus                 scroll
+                                blur                  unload
+                                
+  Some common Event Methods:
+  $(document).ready()
+  click()
+  dblclick()
+  mouseenter()
+  mouseleave()
+  mousedown()
+  mouseup()
+  hover()
+  focus()
+  blur()
+  
+  The on() Method
+  This is the closest equivalent to the addEventListener method in plain JavaScript.
+  You can add multiple event handlers to the same element with this:
+  ex: 
+    $("p").on({
+        mouseenter: function() {
+            $(this).css("background-color", "lightgray");
+        },
+        mouseleave: function() {
+            $(this).css("background-color", "lightblue");
+        },
+        click: function() {
+            $(this).css("background-color", "yellow");
+        }
+    });
+    
+jQuery Effects - Hide and Show
+  Hide, Show, Toggle, Slide, Fade, and Animate. WOW!
+  
+  Syntax:
+  $(selector).hide(speec,callback);
+ 
+  The optional speed parameter specifies the speed of the hiding/showing, and can take the following
+  values: "slow", "fast", or milliseconds. 
+  
+  The optional callback parameter is a function to be executed after the hide() or show() method completes.
+  
+  jQuery toggle()
+    With jQuery, you can toggle between the hide() and show() methods with the toggle() method. 
+    Shown elements are hidden and hidden elements are shown: 
+    ex:
+      $("button").click(function() {
+        $("p").toggle();
+      });
+      
+  jQuery Fading Methods
+    With jQuery you can fade an element in and out of visibility.
+    jQuery has the following fade methods:
+      - fadeIn()
+      - fadeOut()
+      - fadeToggle()
+      - fadeTo()
+      
+    Their syntax is the same as hide, show, and toggle
+    
+  jQuery fadeTo() Method
+    The jQuery fadeTo() method allows fading to a given opacity (value between 0 and 1).
+    
+    Syntax:
+      $(selector).fadeTo(speed, opacity, callback);
+      
+jQuery Effects - Sliding
+  The jQuery slide methods slide elements up and down. 
+  slideDown()
+  slideUp()
+  slideToggle()
+  
+  Same syntax as you are used to
+ 
+jQuery Effects - Animation
+  The jQuery animate() method lets you create custom animations. 
+  
+  Syntax:
+    $(selector).animate({params}, speed, callback);
+    
+  The required params parameter defines the CSS properties to be animated. 
+  Any css parameters that use a dash must be camelCased for jQuery. 
+  ex: 
+    font-size is fontSize
+  
+  *By default, all HTML elements have a static position, and cannot be moved. To manipulate
+  the position, remember to first set the CSS position property of the element to relative, fixed,
+  or absolute!
+  
+  It is also possible to define relative values (the value is then relative to the element's current
+  value). This is done by putting += or -= in front of the value: 
+  
+  You can even specify a property's animation value as "show", "hide", or "toggle"
+  ex: 
+    $("button").click(function() {
+      $("div").animate({
+          height: 'toggle'
+      });
+    });
+    
+  When you declare a bunch of animations consecutively, they enter their own queue, and are 
+  executed one-by-one. 
+  
+jQuery Stop Animations
+  The jQuery stop() method is used to stop animations or effects before they are finished. 
+  Syntax:
+    $(selector).stop(stopAll, goToEnd);
+    
+    The optional stopAll parameter specifies whether also the animation queue should be cleared
+    or not. Default is false, which means that only the active animation will be stopped, allowing
+    any queued animations to be performed afterwards.
+    
+    The optional goToEnd parameter specifies whether or not to complete the current animation
+    immediately. Default is false.
+  
+jQuery Method Chaining
+  With jQuery, you can chain together actions/methods. 
+  Chaining allows us to run multiple jQuery methods (on the same element) within a single statement.
+  This is very similar to what you know from d3.
+  
+  This actually means that browser does not have to find the same element more than once. 
+  
+  Ex:
+    $("#p1").css("color", "red").slideUp(2000).slideDown(2000);
+    Which is usually written more like this:
+    $("#p1").css("color", "red")
+            .slideUp(2000)
+            .slideDown(2000);
+   
+ jQuery DOM Manipulation
+   jQuery comes with a bunch of DOM related methods that make it easy to access and manipulate
+   elements and attributes.
+   
+   Get Content - text(), html(), and val()
+   text() - sets or returns the text content of selected elements
+   html() - sets or returns the contents of selected elements (including HTML markup)
+   val() - Sets or returns the value of form fields 
+   
+   Get Attributes - attr()
+   The jQuery attr() method is used to get attribute values.
+   The following example demonstrates how to get the value of the href attribute in a link:
+   ex:
+     $("button").click(function() {
+       console.log($("#w3s").attr("href"));
+     });
+  
+    
+    
+  
+  
