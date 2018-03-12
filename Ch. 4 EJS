@@ -1,10 +1,13 @@
 Data Objects:
-    Any time you use dot notation, you can also use square brackets. The expression between the brackets is ealutated first and then
+    Any time you use dot notation, you can also use square brackets. The expression between the brackets is evaluated first and then
     used to try and find a property of that name.
     
     *-Array method: join(" "); This joins all of the elements of an array into a string with the argument passed between them.
     -Although uncommon, you can use the delete operator to remove a property from an object.
     -in: this operator returns a boolean value that indicates whether an object has that property.
+    
+    -When using square bracket notation, the expression that you put within the brackets is evaluated first, and 
+    then that value is looked for in the object. 
     
     -Adding and removing things at the start of an array are called unshift and shift. (Shift takes off and returns the value, 
     and unshift adds it)
@@ -17,3 +20,6 @@ Data Objects:
     index exclusive. If you only pass one argument, then it will take the remainder of the array after that argument.
     
     -The place in which global variables live is called the global object, and is stored in the window variable.
+    
+    -There is a way to trim the extra space and newline characters and such from strings. The function to do this
+    is appropriately named trim(). It trims from the front and back of the string. 
