@@ -1,0 +1,117 @@
+Regular Expressions
+
+Some people, when confronted with a problem, think ‘I know, I’ll use regular expressions.’ Now they have two problems.
+
+Jamie Zawinski
+
+Creating a Regular Expression
+  A regular expression is a type of object. It can either be constructed with the RegExp constructor
+  or written as a literal value by enclosing a pattern in forward slash characters.
+  ex:
+    let re1 = new RegExp("abc");
+    let re2 = /abc/;
+    
+  Both of these regular expressions represent the same patter, an a character followed by a b character
+  followed by a c. 
+  
+Testing for Matches
+  Regular expression objects have a number of methods. The simplest one is test. If you pass it a string,
+  it will return a Boolean telling you whether the string contains a match of the pattern in the expression.
+  
+  If you put anything between square brackets, it will match if any of the characters is found. 
+  ex: 
+    console.log(/[0-9]/.test("in 1992"));
+    // returns true
+    
+Sets of Characters
+  There are a number of common character groups that have their own built-in shortcuts. Digits
+  are one of them: \d means the same as [0-9]
+  
+      \d  Any digit character
+      \w  An alphanumeric character ("word character")
+      \s  Any whitespace character(space, tab, newline, and similar)
+      \D  A character that is not a digit
+      \W  A nonwhitespace character
+      .   Any character except for newline
+      
+  If you want to invert a set of characters - to express that you want to match any character
+  except the ones in the set - you can write a caret (^) character after the opening bracket.
+  
+  Repeating parts of a pattern
+  What happens if you want to match a whole number?
+    When you put a plus sign (+) after something in a regular expression, it indicates
+    that the element may be repeated more than once. Thus, /\d+/ matches one or more digit
+    characters. 
+    
+    The star (*) has a similar meaning but also allows the pattern to match zero times. Something
+    with a star after it never prevents a pattern from matching.
+    
+    A question mark (?) makes a part of a pattern optional, meaning it may occur zero or one time. 
+    
+    To indicate that a pattern should occur a precise number of times, use curly braces. 
+    Putting {4} after an element, for example, requires it to occur exactly four times. It is
+    also possible to specify a range this way: {2, 4} means the element must occur at least twice
+    and at most four times. 
+    You may also specify open-ended ranges when using curly braces by omitting the number after
+    the comma. So {5,} means five or more times. 
+    
+Grouping Subexpressions
+  To use an operator like * or + on more than one element at a time, you have to use parentheses.
+  A part of a regular expression that is enclosed in parentheses counts as a single element as 
+  far as the operators following it are concerned. 
+  
+If you add an i at the end of the expression, it makes it case insensitive. 
+Similarly, if you add a g at the end (for global), it will match all possible spots in the string. 
+  
+When you use the match method on strings, it will return the portion of the string that 
+matches.
+  ex: 
+    console.log("one two 100".match(/\d+/));
+    // ["100"]
+    
+The Replace Method: 
+Regular Expressions also have a replace option, which will replace any matches with the desired string.
+ex:
+  console.log("Borobudur".replace(/[ou]/g, "a"));
+  // Barabadar
+In the second string, if you want to refer to specific matched groups, you can use $1, $2, etc. $1 is replaced
+by the text that matched against the first group, $2 by the second, and so on, up to $9. The whole match
+can be referred to with $&.
+    
+Spanning a whole string
+  When you want to make sure that the match must span the whole string, we use ^ and $. The
+  caret matches the start of the input string, while the dollar sign matches the end. So, /^\d+$/
+  matches a string consisting entirely of one or more digits. 
+
+Making sure something starts and/or ends on a word boundary
+  You can use the \b character to signify a word boundary. 
+  ex:
+    console.log(/\bcat\b/.test("concatenate"));
+    // false;
+    
+Choice Patterns
+  You can use the pipe character (|) to denote a choice between the pattern to its left and 
+  the pattern to its right. (It seems like the same use as the or operator in expressions)
+  
+Greed
+  The repetition operators(+, *, ?, and {}) are greedy, meaning they match as much as they can and 
+  backtrack from there. If you put a question mark after them (+?, *?, ??, {}?), they become nongreedy
+  and start by matching as little as possible, matching more only when the remaining pattern does 
+  not fit the smaller match. 
+  
+  A lot of bugs in regular expression programs can be traced to unintentionally using a greedy operator
+  where a nongreedy one would work better. When using a repetition operator, consider the nongreedy variant first. 
+  
+The Search Method
+  The indexOf method on strings cannot be called with a regular expression. But there is another
+  method, search, which does expect a regular expression. Like indexOf, it returns the first index
+  on which the expression was found, or -1 when it wasn't found.
+  
+*Confusion is an essential feature of JavaScript's regular expression interface.* 
+  
+  
+
+  
+
+
+
