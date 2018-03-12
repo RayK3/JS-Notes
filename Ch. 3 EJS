@@ -1,6 +1,9 @@
 Functions:
     -Variables defined within functions are local variables, and are newly created every time the function is called.
-    -Variables declared outside any function are called global
+    -Each function actus in its own little world (its local environment), and can often be understood
+    without knowing a lot about what's going on in the global environment. 
+    
+   
     
     *-If a function doesn't redeclare a global variable inside of it, then it can reference and change that global variable that
     is referenced
@@ -23,6 +26,9 @@ Functions:
     will be assigned undefined. This makes it very easy to pass the wrong amount of arguments to a function and never 
     know about it.
     
+    -If you write an = operator after a parameter, followed by an expression, the value of that expression will
+    replace the argument when it is not given. It acts as the default case of that function. 
+    
     -You can declare a variable and set it equal to a function with a specific argument. This will be a function that will always 
     use that argument. This is called a closure.
     
@@ -31,3 +37,11 @@ Functions:
     
     -How difficult it is to find a good name for a function is a good indication of how clear a concept it is that you're trying 
     to wrap.
+
+    -Functions and Side Effects:
+      Functions can be roughly divided into those that are called for their side effects and those that are
+      called for their return value. 
+      
+      A pure function is a specific kind of value-producing function that not only has no side effects but also
+      doesn't read global bindings whose value might change. A pure function has the pleasant property that,
+      when called with the same arguments, it always produces the same value (and doesn't do anything else)
