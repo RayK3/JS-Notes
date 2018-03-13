@@ -264,9 +264,99 @@ jQuery - Get and Set CSS Classes
   To set multiple CSS Properties:
     css("propertyname":"value","propertyname":"value",...});
     
-  
-  
+jQuery - Dimensions
+  jQuery has several important methods for working with dimensions:
+  - width()
+  - height()
+  - innerWidth()
+  - innerHeight() 
+  - outerWidth()
+  - outerHeight()
     
+  jQuery width() and height() Methods
+    - The width() method sets or returns the width of an element (excludes padding, border and margin).
+    - The height() method sets or returns the height of an element (excludes padding, border and margin).
     
+  jQuery innerWidth() and innerHeight() Methods
+    - The innerWidth() method returns the width of an element (includes padding).
+    - The innerHeight() method returns the height of an element (includes padding).
+    
+  jQuery outerWidth() and outerHeight() Methods
+    - The outerWidth() method returns the width of an element (includes padding and border).
+    - The outerHeight() method returns the height of an element (includes padding and border).
+    
+jQeury - Traversing
+  What is Traversing?
+    Traversing is moving through HTML elements based on their relation to other elements. 
+  There are a few types of traversal, though the most common is tree-traversal. 
   
+  jQuery Traversing - Ancestors 
+    An ancestor is a parent, grandparent, great-grandparent, and so on. 
+    
+    Traversing Up the DOM tREE
+      - parent()
+      - parents()
+      - parentsUntil()
+      
+      jQuery parent() Method:
+        The parent() method returns the direct parent element of the selected element. 
+        
+      jQuery parents() Method:
+        - The parents() method returns all ancestor elements of the selected element, all the way
+        up to the document's root element (<html>).
+        - There is an optional parameter to filter the search for ancestors. It finds all the 
+        parents that match the type of element you are looking for. 
+        
+      jQuery parentsUntil() Method:
+        - The parentsUntil() method returns all ancestor elements between two given arguments. 
+        ex:
+          $("span").parentsUntil("div");
+  
+  jQuery Traversing - Descendants
+    A descendant is a child, grandchild, great-grandchild, and so on. 
+    
+    Traversing Down the DOM Tree
+      - children()
+      - find()
+      
+      jQuery children() Method:
+        The children() method returns all direct children of the selected element.
+        This method only traverses a single level down the DOM tree.
+        This also can take an optional parameter to filter the search. 
+        
+      jQuery find() Method:
+        The find() method returns descendant elements of the selected element, all the way down
+        to the last descendant. 
+        ex:
+          $("div").find("span");
+          
+  jQuery Traversing - Siblings
+    Siblings share the same parent. 
+    
+    Traversing Sideways in the DOM Tree
+      - siblings()
+      - next()
+      - nextAll()
+      - nextUntil()
+      - prev()
+      - prevAll()
+      - prevUntil()
+      
+      jQuery siblings() Method:
+        The siblings() method returns all sibling elements of the selected element.
+      
+      jQuery next() Method:
+        The next() method returns the next sibling element of the selected element.
+        
+      jQuery nextAll() Method:
+        The nextAll() method returns all next sibling elements of the selected element.
+        
+      jQuery nextUntil() Method:
+        The nextUntil() method returns all next sibling elements between two given arguments. 
+      
+      jQuery prev(), prevAll() & prevUntil() Methods:
+        These work the same as next() nextAll() and nextUntil() except they work in the opposite 
+        direction. 
+    
+  jQuery Traversing - Filtering
   
