@@ -204,22 +204,67 @@ jQuery Method Chaining
             .slideUp(2000)
             .slideDown(2000);
    
- jQuery DOM Manipulation
-   jQuery comes with a bunch of DOM related methods that make it easy to access and manipulate
-   elements and attributes.
+jQuery DOM Manipulation
+  jQuery comes with a bunch of DOM related methods that make it easy to access and manipulate
+  elements and attributes.
    
-   Get Content - text(), html(), and val()
-   text() - sets or returns the text content of selected elements
-   html() - sets or returns the contents of selected elements (including HTML markup)
-   val() - Sets or returns the value of form fields 
+  Get Content - text(), html(), and val()
+  text() - sets or returns the text content of selected elements
+  html() - sets or returns the contents of selected elements (including HTML markup)
+  val() - Sets or returns the value of form fields 
    
-   Get Attributes - attr()
-   The jQuery attr() method is used to get attribute values.
-   The following example demonstrates how to get the value of the href attribute in a link:
-   ex:
-     $("button").click(function() {
-       console.log($("#w3s").attr("href"));
-     });
+  Get Attributes - attr()
+  The jQuery attr() method is used to get attribute values.
+  The following example demonstrates how to get the value of the href attribute in a link:
+  ex:
+    $("button").click(function() {
+      console.log($("#w3s").attr("href"));
+    });
+    
+jQuery - Add Elements
+  - append() - Inserts content at the end of the selected elements
+  - prepend() - Inserts content at the beginning of the selected elements
+  - after() - Inserts content after the selected elements
+  - before() - Inserts content before the selected elements
+  
+  You can send several arguments into any of these methods and they will add all of them. 
+  
+  ex:
+    function afterText() {
+      var txt1 = "<b>I </b>";
+      var txt2 = $("<i></i>").text("love ");
+      var txt3 = document.createElement("b");
+      txt3.innerHTML = "jQuery!";
+      $("img").after(txt1, txt2, txt3);
+    }
+    
+jQuery - Remove Elements
+  To remove elements and content, there are mainly two jQuery methods:
+  - remove() - Removes the selected element (and its child elements)
+  - empty() - Removes the child elements from the selected element
+  
+  ex: 
+    $("#div1").empty();
+    $("#div1").remove();
+    $("p").remove(".test", ".demo");
+    
+jQuery - Get and Set CSS Classes
+  - addClass() - Adds one or more classes to the selected elements
+  - removeClass() - Removes one or more classes from the selected elements
+  - toggleClass() - Toggles between adding/removing classes from the selected elements
+  - css() - Sets or returns the style attribute
+  
+  When adding multiple classes, they are separated with a space. Like this: 
+    $("#div1").addClass("important blue");
+    
+  To return a CSS Property:
+    css("propertyname");
+  To set a CSS Property:
+    css("propertyname", "value");
+  To set multiple CSS Properties:
+    css("propertyname":"value","propertyname":"value",...});
+    
+  
   
     
     
