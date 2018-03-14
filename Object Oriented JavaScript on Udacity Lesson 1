@@ -1,0 +1,80 @@
+Creating Objects:
+  To create a new, blank object, you can use object literal notation, or the Object() constructor
+  function. Since the Object constructor function is a bit slower and more verbose, it is recommended
+  to use literal notation. 
+  
+Adding Properties:
+  Properties can be added to objects simply by specifying the property name, then giving it a value.
+  
+Removing Properties:
+  We can remove a property from an object, simply by calling delete. 
+  Upon a successful deletion, the delete operator returns true.
+  
+Passing Arguments:
+  In JavaScript, a primitive is immutable. In other words, any changes made to an argument inside
+  a function effectively creates a copy local to that function, and does not affect the primitive outside
+  of that function. 
+  
+  On the other hand, objects in JavaScript are mutable. If you pass an object into a function, JavaScript 
+  passes a reference to that object. 
+    If you modify a property of an object within a function, that property will be modified in the 
+    actual object. 
+    
+Invoking Object Methods:
+  You can include functions in arrays and invoke them like this:
+  myArray[0](); //kinda weird
+  
+  If you name an object method like this:
+    hello: function greeter() {};
+  Then you will see a more beneficial function name in the call stack during debugging. 
+  
+A Method Can Access the Object it was Called on
+  Using this, methods can directly access the object that it is called on. 
+  
+Beware of Globals
+  How a function is invoked determines the value of this. 
+  When a regular function is invoked, the value of this is the global window object.
+  
+  Global Variables are Properties on window
+    Since the window object is at the global level, an interesting thing happens with global
+    variable declarations. Every variable declaration that is made at the global level automatically
+    becomes a property on the window object!
+    ex:
+      var currentlyEating = 'ice cream';
+      window.currentlyEating === currentlyEating;
+      // true 
+    
+    Only declaring variables with the var keyword will add them to the window object. If you declare
+    a variable outside of a function with either let or const, it will not be added as a property to 
+    the window object. 
+    
+  There are a few reasons why global variables aren't ideal. 
+  Tight Coupling:
+    Tight coupling is a phrase that developers use to indicate code that is too dependent on the
+    details of each other. The word "coupling" means the "pairing of two items together." In tight
+    coupling, pieces of code are joined together in a way where changing one unintentionally alters
+    the functioning of some other code. 
+    
+  Name Collisions
+    A name collision occurs when two (or more) functions depend on a variable with the same name. 
+    A major problem with this is that both functions will try to update the variable and or set the variable,
+    but these changes are overridden by each other.
+    
+  Just write variables within the functions that you need them!
+  
+Object Methods
+  The Object() function actually includes a few methods of its own:
+    Object.keys()
+    Object.values()
+    
+  Fun Fact: Object.values() is actually significantly newer than Object.keys(), and came about 
+  in 2017.
+    
+  
+    
+  
+  
+  
+    
+  
+  
