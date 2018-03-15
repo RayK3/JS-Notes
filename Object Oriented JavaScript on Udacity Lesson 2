@@ -1,0 +1,72 @@
+Functions at Runtime
+    In JavaScript, functions are first-class functions, which means you can store it in a variable,
+  pass it as an argument, and return it from a function.
+    Being a first-class function means that it has equal status in JavaScript as the other 
+  datastructures.
+  
+  You can access properties of functions, like name and length, just like some other objects. 
+  
+  Functions Can Return Functions
+      Functions must always return a value, whether its defined in a return statement or implicitly 
+    undefined. You can just as easily return a function.
+    
+      When you return a function, it isn't called during the return, but you can save it into a variable
+    and call that variable. 
+    
+      ***If a function returns a function, you can also just add another set of parentheses to the end 
+    of the first function call and it will call the other once it is returned. 
+    
+      ex: outerFunction()(); // runs the inner returned function after the outer one.
+      
+  Callback Functions
+      A function that takes other functions as arguments (and/or returns a function) is known 
+    as a higher-order function. A function that is passed as an argument into another function is
+    called a callback function. 
+    
+      The forEach function does an operation on each element of the array, and can return whatever 
+    you want it to. 
+      The map function does an operation on each element of the array, but it returns a new array with
+    the mapped values. 
+    
+  Scope of Functions
+    You know this stuff. 
+    
+    Scope Chain
+        Whenever code attempts to access a variable during a function call, the scopes are searched for
+      that identifier starting from the innermost scope and working outward. 
+        When a functino is run, it creates its own scope. A function's scope is the set of variables
+      available for use within that function. 
+      
+  Closures
+      The process of a function retaining access to its scope is called a closure. A closure can capture
+    any number of parameters and variables that it needs. MDN defines a closure as:
+    "the combination of a function and the lexical environment within which that function was declared"
+    
+    Closures allow us to store a snapshot of state at the time the function object is created. 
+    
+  Immediately-Invoked Function Expressions:
+      You are able to instantly invoke a function that you defined if you use this syntax:
+    (function sayHi(){
+      alert('Hi there!');
+      }
+    )();
+      All you are doing is wrapping the function in parentheses, and then adding an extra set of 
+    parentheses afterwards. 
+      
+    Passing Arguments into IIFE's
+      The second pair of parentheses is also the place to put any parameters that the function will 
+      need.
+    ex:
+      (function sayHi(name){
+        alert(`Hi, ${name}`);
+        }
+      )('Ray');
+      // alerts 'Hi, Ray'
+      
+    IIFE's and Private Scope
+      One of the primary uses for IIFE's is to create private scope (i.e., private state). Recall
+    that variables in JavaScript are traditionally scoped to a function. 
+    
+    Another great opportunity to use an IFFE is when you want to execute some code without
+    creating extra global variables. However, note that an IIFE is only intended to be invoked once,
+    to create a unique execution context. 
