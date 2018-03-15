@@ -70,3 +70,8 @@ Functions at Runtime
     Another great opportunity to use an IFFE is when you want to execute some code without
     creating extra global variables. However, note that an IIFE is only intended to be invoked once,
     to create a unique execution context. 
+
+
+    When you use a IIFE and return a function, it makes it possible to declare variables that can
+    only be used by the return function. For the rest of the program, the return function will be
+    the one that is called, but it will retain the variable that was included in the first place. 
