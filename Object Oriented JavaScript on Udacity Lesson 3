@@ -1,0 +1,33 @@
+Classes and Objects
+  Constructor Functions:
+    The things that make a constructor function a constructor are:
+    1. The use of the new keyword,
+    2. How the function is coded internally (using this, and implicit return)
+    
+    Constructor Functions Can Have Parameters
+    They are just like normal functions in this regard, and like some of the constructors
+    you've seen in c++;
+    
+    What happens if you forget to use the new operator?
+      The value of this is way different, and it doesn't return anything, so.
+      
+    The instanceOf operator returns a boolean of whether the object is an instance of
+    the given constructor or not.
+      Actually, it returns whether that constructor occurs anywhere in the prototype chain
+      of the object. 
+      
+  The 'this' keyword
+    When using a constructor, the value of 'this' is set to the new object that is being created. 
+    
+  What does 'this' get set to?
+    There are four ways to call functions, and each way sets this differently
+    
+    1.Calling a constructor function with the new keyword sets this to a newly-created object.
+    
+    2.Calling a function that belongs to an object sets this to the object itself
+    
+    3.Calling a function on its own sets this to window.
+    
+  Setting our own 'this'
+    
+    
