@@ -1,0 +1,95 @@
+Cookies:
+  
+  A cookie is just one or more pieces of information stored as text strings on your machine. A Web server
+sends you a cookie and the browser stores it. The browser then returns the cookie to the server the next
+time the page is referenced. 
+
+  Whatever cookie is saved to your hardrive is sent back when you visit the website again. They have been
+given a bad wrap recently, and they are not dangerous. They are not files that can be executed on your hard-drive.
+  They allow the website to save personal defaults in your hard-drive.
+  
+Tracking Pixel
+
+  Is a small graphic that is loaded when a user visits a website or opens and email, and is used to track
+  certain user activities. With a tracking pixel, advertisers can acquire data for online marketing, web analysis
+  or email marketing. 
+  
+  It is often invisible to users. Either designed to be transparent, or camouflaged in the background. 
+  
+  When the page is loaded, the tracking pixel is added, and when the pixel is added, it sends information
+  to its server. 
+  
+  The following data can be acquired and analyzed with a tracking pixel:
+  - operating system used
+  - Type of website or email used (example: mobile or desktop)
+  - Type of client used, (browser or mail program for example)
+  - client's screen resolution
+  - time the email was read or website was visited
+  - activities on the website during a session (when using multiple tracking pixels)
+  - IP address
+  
+  Advantages of tracking pixels
+  - They are more advantageous than cache in browsers: it is possible to differentiate between users 
+  and bots, as well as create user profiles
+  
+  -tracking pixels generally have similar functionality as cookies. The tracks of the user are recorded
+  by a file that is saved in the user's hard drive. Since cookies are so often being blocked by browsers, 
+  the tracking pixel is used as an alternative
+  
+GUID or UUID
+  They are both fundamentally the same thing:
+  Globally unique identifier or Universally unique identifier. They are a big version of an id number. 
+  
+  GUID's are enormouse numbers that are nearly guaranteed to be unique. They are usually 128 bits long. 
+  ex:
+    30dd879c-ee2f-11db-8314-0800200c9a66
+    
+  Here's the thinking behind GUIDs:
+   - If you pick a huge random number (39 digits long), it's really unlikely that someone will pick the 
+   same one. 
+   - GUIDs are not tied to a product. A GUID can be used for people, cars, files, webpages, colors, anything.
+   
+   GUIDS GIVE YOU A UNIQUE SERIAL NUMBER THAT CAN BE USED ON ANY ITEM IN THE UNIVERSE
+    
+   Pros of GUID's
+     - No central authority: You avoid the need for management, but can't keep track of what's been assigned.
+     A compromise is to generate GUIDS internally and then hand them out. 
+     
+     - Easily combined: You can merge GUIDS from different data sources very easily with a low chance of conflict. 
+     
+   Cons of GUID's
+    - Appear random: Users cannot easily guess the ID for an object they don't know. This is good for security,
+    difficult for debugging. 
+    - GUID overhead: GUIDs are an example of the time-space tradeoff. You save time in mergin but have to use space 
+    to store the large GUID. It may not make sense to have a 16-byte GUID keeping track of a 4-byte item in your
+    database. 
+   
+   
+ Using Cookies and GUID's to save states of the website based on users (some notes)
+   Reading and Writing Cookies:
+     You can create, read, and delete cookies with the document.cookie property.
+     
+     With a path parameter, you can tell the browser what path the cookie belongs to. By default, the cookie
+     belongs to the current page. 
+     
+     You can write cookies like this:
+       ex: 
+         document.cookie = "username=John Doe; path=/"; // You use an equals sign for assignment, and 
+         semi-colons to separate
+        
+     You can read a cookie like this:
+       ex:
+         var x = document.cookie; // This will return all the values in one string 
+         
+     You can change cookies by reassigning them
+     
+     You can delete cookies like this:
+       ex:
+         document.cookie = "username=John Doe; expires=Thu, 011 Jan 1970 00:00:00 UTC; path=/;";
+         // you just need to set the expiry date to some past date. 
+         // you should define the cookie path to ensure that you delete the right cookie.
+         
+     document.cookie is an accessor property with native setter and getter functions, and consequently 
+     is not a data property with a value: what you write is not the same as what you read, everything is 
+     always mediated by the JavaScript interpreter.
+        
