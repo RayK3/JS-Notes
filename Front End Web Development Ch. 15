@@ -24,6 +24,24 @@ Introduction to Node.js
   
   Using the path module 
     This allows it easier to manipulate the file path
+    
+  Creating a custom module:
+    You just need to create a separate js file with any of the extra functionality that you are looking for. 
+    After declaring any functions, in order to make them available globally, you can use the global variable named module.exports
+    ex:
+      module.exports = extractFilePath;
+      
+  Handling errors:
+    Node.js callbacks typically have an error argument as their first argument. 
+    It is really common to have a dedicated function called handleError to handle errors. It's as easy to write a 404 error response as 
+    this:
+      res.writeHead(404);
+      res.end();
+    
+    This pattern - "errors first, return early" - is one of the best practices that is a part of the Node ecosystem. 
   
+  Mime Types: 
+    Have you ever wondered how a computer knows how to open a movie file with a video player and a PDF with a document viewer? Your computer
+    keeps a table of file types and the programs associated with those file types. It infers a file's type by looking at the file extension. 
     
   
