@@ -16,5 +16,16 @@ Real-Time Communication with WebSockets
       });
       
       console.log('websockets server started');
+      
+      ws.on('connection', function (socket) {
+        console.log('client connection established');
+      });
+      
+      When this connection is established, it will be available using the socket argument. 
+      
+  You can use another module called wscat. This allows you to connect to your WebSocket. You do this with the command:
+    wscat -c ws://localhost:3001 (or whatever url you are trying to reach).
+    
+  The ws object keeps track of all connections via its clients property.
     
   
