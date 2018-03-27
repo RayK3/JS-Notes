@@ -1,0 +1,20 @@
+Real-Time Communication with WebSockets
+  With regular GET and POST requests, your browser has to make a new request and wait for a response for each exchange of data with the server. As you learned
+    Ajax requests do not cause page reloads, they do generate just as much network traffic, with each request and response requiring a little
+  bit of overhead to produce and process. 
+    WebSockets, on the other hand, provides a twp-way communication protocol over HTTP. It creates a single connection and keeps it open
+    for real-time communication.
+    
+  The WebSockets module
+    Basically serves as another way to create a server. 
+    ex:
+      var WebSocket = require('ws');
+      var WebSocketServer = WebSocket.Server;
+      var port = 3001;
+      var ws = new WebSocketServer({
+        port: port
+      });
+      
+      console.log('websockets server started');
+    
+  
