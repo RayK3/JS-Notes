@@ -1,0 +1,19 @@
+Using ES6 with Babel
+  Tools for Compiling JavaScript
+    Babel is a compiler. Its job is to translate ES6 syntax into the equivalent ES5 code to be 
+  run by a browser's JavaScript engine.
+  
+  Class syntax:
+    So a class is new in JS, but it still doesn't work the exact same way as c++.
+    It basically just makes for shorter syntax to do what you already knew how to do. 
+    
+    ex:
+      class ChatApp {
+        constructor() {
+          this.hello = function() {
+            console.log('hello');
+          };
+        };
+      }
+      
+      new ChatApp();
