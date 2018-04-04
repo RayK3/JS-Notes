@@ -17,3 +17,69 @@ Using ES6 with Babel
       }
       
       new ChatApp();
+
+
+  ES6 Module System:
+    In ES6 modules, you must explicitly export the pieces of your module you want others to use.
+    It looks like this to export:
+      export default ChatApp; // instead of creating the instance above. 
+      
+    This declares that ChatApp is the default value available from the module it was exported from. 
+    
+    Then say, in a sister file, to access the file, you use this:
+    
+      import ChatApp from './app';
+      new ChatApp();
+      
+      /*The name ChatApp in the first line is not actually important. Whatever name you put there
+      will hold the exported Chatapp from ./app. However, it is best practice to use the same name. */
+      
+  Default Parameters:
+    You've kind of seen this before. These are when you set default values in function definitions
+    that would optionally be used if the function wasn't called with all the arguments.
+    It looks like this:
+      constructor(message, user='batman', timestamp=(new Date()).getTime()) {};
+      
+  In order to do the same thing, but without the need to know the order of the arguments, you can do 
+  this:
+    constructor({message: m, user: u, timestamp: t}) {};
+    
+    //This is called the destructuring assignment syntax. 
+    
+    Then you call the constructor like this:
+    
+    new ChatMessage({message: 'hello from the outside', user='rayk3@whatever.com', timestamp=1462399523859});
+    
+    The constructor looks for the key message in the argument and saves it to a new local variable m. Then
+    it can be accessed using m from within the body of the constructor. The same happens for user and timestamp. 
+    
+    You can combine both of these together actually. Something like this:
+    
+    class ChatMessage {
+      constructor({
+        message: m,
+        user: u='batman',
+        timestamp: t=(new Date()).getTime()
+      }) {
+        this.message = m;
+        this.user = u;
+        this.timestamp = t;
+      }
+    }
+    
+ Using the let keyword means that your variable will not be hoisted -- they will not get moved to the 
+ top of the function scope in which they are created. 
+ 
+ In order to export many things, all you need to do is use 'export' before the declaration.
+ 
+ ex:
+   export class Whatever {};
+   
+ In order to import a named export, you need to do this.
+   import {ChatForm} from './dom';
+   
+   //The named import for ChatForm declares a local variable named ChatForm and binds it to the value 
+   from the dom module of the same name. 
+      
+      
+      
